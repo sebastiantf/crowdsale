@@ -10,7 +10,6 @@ App = {
     },
 
     loadWeb3: async () => {
-        console.log("loadWeb3")
         if (typeof web3 !== 'undefined') {
             App.web3Provider = web3.currentProvider
             web3 = new Web3(web3.currentProvider)
@@ -38,7 +37,6 @@ App = {
     },
 
     loadAccount: async () => {
-        console.log("loadAccount")
         web3.eth.getCoinbase(function (error, account) {
             if (error === null) {
                 App.account = account;
@@ -52,7 +50,6 @@ App = {
     },
 
     loadContract: async () => {
-        console.log("loadContract")
         const abi = await $.getJSON('CrowdSale.json')
         const contractAddress = '0x085de6CbDdF9678924016ABB43a1c72D2d98dd7d'
 
@@ -64,11 +61,9 @@ App = {
         App.contracts.CrowdSaleContract.setProvider(App.web3Provider);
 
         App.CrowdSaleInstance = await App.contracts.CrowdSaleContract.at(contractAddress);
-        console.log(App.CrowdSaleInstance);
     },
 
     render: async () => {
-        console.log("render")
         if (App.loading) {
             return
         }
@@ -131,18 +126,15 @@ App = {
 
     toggleBuyButton: () => {
         if (App.account) {
-            console.log("App.account exists");
             $("#connect-wallet-btn").hide()
             $("#buy-btn").show()
         } else {
-            console.log("App.account doesn't exists");
             $("#connect-wallet-btn").show()
             $("#buy-btn").hide()
         }
     },
 
     setLoading: (loading, txnProcessing=false) => {
-        console.log("setLoading")
         App.loading = loading;
 
         if (App.loading) {
@@ -159,7 +151,6 @@ App = {
     },
 
     reload: async () => {
-        console.log("reload")
         App.account = '';
         await App.loadAccount();
         await App.render();
