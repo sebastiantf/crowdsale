@@ -76,10 +76,17 @@ App = {
         App.setLoading(true);
 
         $('#account').html(App.account);
-        // await App.renderForm();
+        await App.setRemainingTokens();
 
         // Loading finished
         App.setLoading(false);
+    },
+
+    setRemainingTokens: async () => {
+        let result = (await App.CrowdSaleInstance.remainingTokens()).toNumber();
+        const remainingTokens = (result/(10**9)).toFixed(9);
+
+        $('#remainingTokens').html(remainingTokens);
     },
 
     setLoading: (loading) => {
