@@ -101,6 +101,7 @@ App = {
                 $('#receive-amount').val(receiveAmount);
             } catch (error) {
                 console.error(error)
+                alert("An error occurred. Please see the console!")
                 $('#receive-amount').val('');
             }
         } else {
