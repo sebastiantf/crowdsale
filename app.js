@@ -77,6 +77,7 @@ App = {
 
         $('#account').html(App.account);
         await App.setRemainingTokens();
+        App.toggleBuyButton();
 
         // Loading finished
         App.setLoading(false);
@@ -103,6 +104,18 @@ App = {
             }
         } else {
             $('#receive-amount').val('');
+        }
+    },
+
+    toggleBuyButton: () => {
+        if (App.account) {
+            console.log("App.account exists");
+            $("#connect-wallet-btn").hide()
+            $("#buy-btn").show()
+        } else {
+            console.log("App.account doesn't exists");
+            $("#connect-wallet-btn").show()
+            $("#buy-btn").hide()
         }
     },
 
