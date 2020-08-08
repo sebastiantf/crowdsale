@@ -89,6 +89,23 @@ App = {
         $('#remainingTokens').html(remainingTokens);
     },
 
+    calculateReceiveAmount: async () => {
+        let inputAmount = $("#input-amount").val();
+        if(inputAmount) {
+            let inputAmountInWei = web3.toWei(parseFloat(inputAmount));
+            try {
+                let result = (await App.CrowdSaleInstance._getTokenAmount(inputAmountInWei)).toNumber();
+                const receiveAmount = (result/(10**9)).toFixed(9);
+                $('#receive-amount').val(receiveAmount);
+            } catch (error) {
+                console.error(error)
+                $('#receive-amount').val('');
+            }
+        } else {
+            $('#receive-amount').val('');
+        }
+    },
+
     setLoading: (loading) => {
         window.alert("setLoading")
         App.loading = loading;
