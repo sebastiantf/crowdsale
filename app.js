@@ -42,11 +42,12 @@ App = {
         web3.eth.getCoinbase(function (error, account) {
             if (error === null) {
                 App.account = account;
-                $(".account-address").html(account);
                 console.log("Connected Account: ", account);
             } else {
+                App.account = '';
                 console.log(error);
             }
+            $('#account').html(App.account);
         });
     },
 
