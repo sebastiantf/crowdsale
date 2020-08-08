@@ -10,12 +10,12 @@ App = {
     },
 
     loadWeb3: async () => {
-        window.alert("loadWeb3")
+        console.log("loadWeb3")
         if (typeof web3 !== 'undefined') {
             App.web3Provider = web3.currentProvider
             web3 = new Web3(web3.currentProvider)
         } else {
-            window.alert("Please connect to Metamask.")
+            console.log("Please connect to Metamask.")
         }
         // Modern dapp browsers...
         if (window.ethereum) {
@@ -38,7 +38,7 @@ App = {
     },
 
     loadAccount: async () => {
-        window.alert("loadAccount")
+        console.log("loadAccount")
         web3.eth.getCoinbase(function (error, account) {
             if (error === null) {
                 App.account = account;
@@ -52,7 +52,7 @@ App = {
     },
 
     loadContract: async () => {
-        window.alert("loadContract")
+        console.log("loadContract")
         const abi = await $.getJSON('CrowdSale.json')
         const contractAddress = '0x085de6CbDdF9678924016ABB43a1c72D2d98dd7d'
 
@@ -68,7 +68,7 @@ App = {
     },
 
     render: async () => {
-        window.alert("render")
+        console.log("render")
         if (App.loading) {
             return
         }
@@ -121,7 +121,7 @@ App = {
     },
 
     setLoading: (loading) => {
-        window.alert("setLoading")
+        console.log("setLoading")
         App.loading = loading;
 
         if (App.loading) {
@@ -134,6 +134,7 @@ App = {
     },
 
     reload: async () => {
+        console.log("reload")
         App.account = '';
         await App.loadAccount();
         await App.render();
