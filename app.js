@@ -130,11 +130,20 @@ App = {
             $('#loader').hide();
             $('#content').show();
         }
+    },
+
+    reload: async () => {
+        App.account = '';
+        await App.loadAccount();
+        await App.render();
     }
 }
 
 $(() => {
-    $(window).on('load', () => {
-        App.load();
+    $(window).on('load', async () => {
+        await App.load();
+        ethereum.on('accountsChanged', async function (accounts) {
+            await App.reload();
+          });
     });
 });
