@@ -114,12 +114,15 @@ App = {
         if(inputAmount) {
             let inputAmountInWei = web3.toWei(parseFloat(inputAmount));
             try {
+                App.setLoading(true, true);
                 await App.CrowdSaleInstance.buyTokens(App.account, { from: App.account, value: inputAmountInWei});
+                App.setLoading(false);
                 console.log("buyTokens transaction executed");
                 $("input").trigger("reset");
             } catch (error) {
                 console.error(error)
                 alert("An error occurred. Please see the console!")
+                App.setLoading(false);
             }
         } else {
             return
@@ -138,15 +141,19 @@ App = {
         }
     },
 
-    setLoading: (loading) => {
+    setLoading: (loading, txnProcessing=false) => {
         console.log("setLoading")
         App.loading = loading;
 
         if (App.loading) {
             $('#loader').show();
             $('#content').hide();
+            if (txnProcessing) {
+                $('#txn-processing-msg').show();
+            }
         } else {
             $('#loader').hide();
+            $('#txn-processing-msg').hide();
             $('#content').show();
         }
     },
