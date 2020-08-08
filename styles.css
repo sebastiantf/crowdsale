@@ -2,7 +2,7 @@
     outline: none !important;
 }
 
-.hsSPgC {
+.outer-container {
     position: relative;
     max-width: 420px;
     width: 100%;
@@ -13,17 +13,17 @@
     padding: 1rem;
 }
 
-.keYaRz {
+.inner-container {
     position: relative;
 }
 
-.drAiDs {
+.grids {
     display: grid;
     grid-auto-rows: auto;
     grid-row-gap: 12px;
 }
 
-.bHNYxs {
+.grid {
     display: flex;
     position: relative;
     background-color: rgb(44, 47, 54);
@@ -32,16 +32,16 @@
     border-radius: 20px;
 }
 
-.bhKvOH {
-    background-color: rgb(33, 36, 41);
+.field {
+    background-color: rgb(255, 255, 255);
     border-radius: 20px;
     border-width: 1px;
     border-style: solid;
-    border-color: rgb(247, 248, 250)
+    border-color: rgb(247, 248, 250);
     border-image: initial;
 }
 
-.eOBaof {
+.field-header {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -52,7 +52,7 @@
     padding: 0.75rem 1rem 0px;
 }
 
-.bcpqQH {
+.field-header-inner {
     box-sizing: border-box;
     min-width: 0px;
     width: 100%;
@@ -65,7 +65,7 @@
     padding: 0px;
 }
 
-.css-1qqnh8x {
+.field-header-text {
     box-sizing: border-box;
     min-width: 0px;
     font-weight: 500;
@@ -74,7 +74,7 @@
     margin: 0px;
 }
 
-.kSZTx {
+.input-container {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -82,7 +82,7 @@
     padding: 0.75rem 0.75rem 0.75rem 1rem;
 }
 
-.knazNL {
+.input-field {
     color: rgb(0, 0, 0);
     width: 0px;
     position: relative;
@@ -106,7 +106,7 @@ html, input, textarea, button {
     font-family: "Inter var", sans-serif;
 }
 
-.kOFyxa {
+.currency-select-btn {
     -webkit-box-align: center;
     align-items: center;
     height: 2.2rem;
@@ -126,7 +126,7 @@ html, input, textarea, button {
     padding: 0px 0.5rem;
 }
 
-.ftbELq {
+.currency {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -134,34 +134,24 @@ html, input, textarea, button {
     justify-content: space-between;
 }
 
-.hcGfqK {
+.currency-img {
     width: 24px;
     height: 24px;
     box-shadow: rgba(0, 0, 0, 0.075) 0px 6px 10px;
     border-radius: 24px;
 }
 
-.dYVuaw {
+.currency-text {
     font-size: 20px;
     margin: 0px 0.25rem 0px 0.75rem;
 }
 
-.fKBRGj {
-    height: 35%;
-    margin: 0px 0.25rem 0px 0.5rem;
-}
-
-.fKBRGj path {
-    stroke: rgb(0, 0, 0);
-    stroke-width: 1.5px;
-}
-
-.eruhQI {
+.arrow-break-container {
     display: grid;
     grid-auto-rows: auto;
 }
 
-.ekGPPs {
+.arrow-break {
     box-sizing: border-box;
     min-width: 0px;
     width: 100%;
@@ -175,23 +165,11 @@ html, input, textarea, button {
     padding: 0px;
 }
 
-.evxUAc {
+.arrow {
     padding: 2px;
 }
 
-.CgfTX {
-    cursor: pointer;
-    color: rgb(33, 114, 229);
-    font-weight: 500;
-    border-width: initial;
-    border-style: none;
-    border-color: initial;
-    border-image: initial;
-    text-decoration: none;
-    background: none;
-}
-
-.bHNYxs {
+.grid {
     display: flex;
     position: relative;
     background-color: rgb(44, 47, 54);
@@ -200,73 +178,7 @@ html, input, textarea, button {
     border-radius: 20px;
 }
 
-.bhKvOH {
-    background-color: rgb(255, 255, 255);
-    border-radius: 20px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(247, 248, 250);
-    border-image: initial;
-}
-
-.eOBaof {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    color: rgb(255, 255, 255);
-    font-size: 0.75rem;
-    line-height: 1rem;
-    flex-flow: row nowrap;
-    padding: 0.75rem 1rem 0px;
-}
-
-.bcpqQH {
-    box-sizing: border-box;
-    min-width: 0px;
-    width: 100%;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    margin: 0px;
-    padding: 0px;
-}
-
-.hhZftR {
-    -webkit-box-align: center;
-    align-items: center;
-    height: 2.2rem;
-    font-size: 20px;
-    font-weight: 500;
-    background-color: rgb(33, 114, 229);
-    color: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.075) 0px 6px 10px;
-    cursor: pointer;
-    user-select: none;
-    border-radius: 12px;
-    outline: none;
-    border-width: initial;
-    border-style: none;
-    border-color: initial;
-    border-image: initial;
-    padding: 0px 0.5rem;
-}
-
-.ftbELq {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-}
-
-.lkcpgs {
-    font-size: 16px;
-    margin: 0px 0.25rem;
-}
-
-.FFjrp {
+.rem-token-container {
     box-sizing: border-box;
     min-width: 0px;
     width: 100%;
@@ -275,17 +187,17 @@ html, input, textarea, button {
     border-radius: 20px;
 }
 
-.eVyulT {
+.rem-token {
     display: grid;
     grid-auto-rows: auto;
     grid-row-gap: 4px;
 }
 
-.jvjmnD {
+.btn-container {
     margin-top: 12px;
 }
 
-.dkzats {
+.cta-btn {
     box-sizing: border-box;
     min-width: 0px;
     appearance: none;
@@ -307,7 +219,7 @@ html, input, textarea, button {
     border-radius: 4px;
 }
 
-.dUntTT {
+.cta-btn-blue {
     width: 100%;
     text-align: center;
     display: flex;
