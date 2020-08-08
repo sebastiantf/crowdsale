@@ -109,6 +109,23 @@ App = {
         }
     },
 
+    buyTokens: async () => {
+        let inputAmount = $("#input-amount").val();
+        if(inputAmount) {
+            let inputAmountInWei = web3.toWei(parseFloat(inputAmount));
+            try {
+                await App.CrowdSaleInstance.buyTokens(App.account, { from: App.account, value: inputAmountInWei});
+                console.log("buyTokens transaction executed");
+                $("input").trigger("reset");
+            } catch (error) {
+                console.error(error)
+                alert("An error occurred. Please see the console!")
+            }
+        } else {
+            return
+        }
+    },
+
     toggleBuyButton: () => {
         if (App.account) {
             console.log("App.account exists");
